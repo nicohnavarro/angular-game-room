@@ -1,0 +1,69 @@
+.sidebar {
+  height: 97vh;
+  margin: 2px;
+  max-width: 100%;
+  background: rgba(27, 26, 26, 0.158);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+
+  .avatar {
+    margin-top: 10%;
+    border-radius: 50%;
+    width: 70px;
+    img {
+      border-radius: 50%;
+      box-shadow: 0 0 1px 1px #fcd031a3;
+      width: 100%;
+    }
+  }
+
+  .navBar {
+    width: 100%;
+    h2 {
+      font-family: "Montserrat", sans-serif;
+      color: #eaeaea;
+      text-align: center;
+    }
+    .menu {
+      padding: 0;
+      width: 100%;
+    }
+    .btn-grad {
+      
+      width: 100%;
+      height: 40px;
+      margin: 10px auto;
+      display: inline-flex;
+      vertical-align: middle;
+      align-items: center;
+      text-align: center;
+      .icon {
+        color: white;
+        margin-left: 20px;
+        margin-right: 10px;
+      }
+      justify-content: start;
+      list-style: none;
+      .side {
+        margin-top: 4px;
+        color: white;
+        font-family: "Montserrat", sans-serif;
+      }
+    }
+    .btn-grad:hover {
+      background-position: right center; /* change the direction of the change here */
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+      background-image: linear-gradient(135deg, #fcd031a3 10%, #f555558d 100%);
+      border-radius: 10px;
+    }
+  }
+}

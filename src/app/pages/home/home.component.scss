@@ -1,0 +1,13 @@
+.menudisplay{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  padding: 10px;
+  margin-right: 10px;
+  .sidebar{
+    width: 15%;
+  }
+  .menu{
+    width: 60%;
+  }
+}
