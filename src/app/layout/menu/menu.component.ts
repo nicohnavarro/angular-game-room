@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+  @Input() itemMenu: string='home';
+  loading: boolean = true;
+  constructor() {
 
-  constructor() { }
+  }
 
   ngOnInit(): void {
+    setTimeout(() => {
+      this.loading = false;
+      this.itemMenu = 'home';
+    }, 2000);
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,29 +6,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
+  @Output() eventItemMenu: EventEmitter<string> = new EventEmitter();
 
   items = [
     {
       'icon': 'home',
-      'name': 'Home'
+      'name': 'home'
     },
 
     {
       'icon': 'games',
-      'name': 'Games'
+      'name': 'games'
     },
     {
       'icon': 'miscellaneous_services',
-      'name': 'Settings'
+      'name': 'settings'
     },
     {
       'icon': 'code',
-      'name': 'Who I Am'
+      'name': 'whoIAm'
     }
   ]
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  selectMenuOption(item:string){
+    this.eventItemMenu.emit(item);
   }
 
 }

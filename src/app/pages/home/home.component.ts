@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  item:string;
+  constructor() { 
+    this.item=''
+  }
 
   ngOnInit(): void {
   }
 
+  changeMenu(item:string){
+    console.log("home",item)
+    this.item=item;
+  }
 }

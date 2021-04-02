@@ -1,0 +1,15 @@
+@font-face {
+  font-family: Pixelar;
+  src: url("../../../../assets/fonts/Pixelar\ Regular.woff2");
+}
+.header{
+  height: 100%;
+  color: white;
+  .language{
+    font-family: Pixelar;
+    font-size: 25px;
+    span:hover{
+      cursor: pointer;
+    }
+  }
+}

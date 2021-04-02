@@ -1,11 +1,13 @@
-<div class="menudisplay">
-  <div class="sidebar">
-    <app-sidebar></app-sidebar>
-
+<section id="page">
+  <nav> <app-sidebar (eventItemMenu)="changeMenu($event)"></app-sidebar> </nav>
+  <main><app-menu [itemMenu]="item"></app-menu></main>
+  <div id="content1">
+    <app-widget></app-widget>
   </div>
-  <div class="menu">
-    <app-menu></app-menu>
-
+  <div id="content2">
+    <app-widget></app-widget>
   </div>
-
-</div>
+  <footer>
+    <app-footer></app-footer>
+  </footer>
+</section>

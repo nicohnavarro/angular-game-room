@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'game-room';
+
+  constructor(private translateService:TranslateService){
+    this.translateService.setDefaultLang('es');
+    const lang = localStorage.getItem("lang") || "es"
+    this.translateService.use(lang)
+    document.documentElement.lang = lang
+  }
 }
