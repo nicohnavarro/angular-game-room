@@ -6,9 +6,9 @@
   <div class="navBar">
     <h2>{{ 'welcome' | translate }}</h2>
     <ul class="menu" *ngFor="let item of items">
-      <li class="btn-grad" (click)="selectMenuOption(item.name)">
+      <li class="btn-grad" (click)="selectMenuOption(item.name)" routerLinkActive="active" routerLink="/home/{{item.name}}" >
         <span class="material-icons-round icon">{{item.icon}}</span>
-        <a class="side">{{item.name | translate}}</a>
+        <a class="side" >{{item.name | translate}}</a>
       </li> 
     </ul>
   </div>

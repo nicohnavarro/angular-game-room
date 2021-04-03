@@ -1,39 +1,26 @@
-
 #page {
   height: 90%;
   width: 100%;
   display: grid;
   padding-top: 15px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 0.5fr 1.5fr 1.2fr 0.8fr;
   grid-template-areas:
-    "nav main main content1"
-    "nav  main main content1"
-    "nav  main main content2"
-    "nav  foot foot foot";
+    "nav main main main main "
+    "nav  main main main main "
+    "nav  main main main main "
+    "nav  foot foot foot foot ";
   grid-gap: 10px;
-}
-
-#page > header {
-  grid-area: head;
 }
 
 #page > nav {
   grid-area: nav;
 }
 
-#page > main {
+#page > .homePage {
   grid-area: main;
 }
 
 #page > footer {
   grid-area: foot;
-}
-
-#page > #content1 {
-  grid-area: content1;
-}
-
-#page > #content2 {
-  grid-area: content2;
 }

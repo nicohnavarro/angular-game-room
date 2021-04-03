@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   item:string;
-  constructor() { 
+  constructor(private router:Router) { 
     this.item=''
   }
 
@@ -15,7 +16,11 @@ export class HomeComponent implements OnInit {
   }
 
   changeMenu(item:string){
-    console.log("home",item)
-    this.item=item;
+    // this.router.navigate([item]);
+    // if(item !=='home'){
+    //   this.router.navigate(['home/'+item]);
+    // }
+    // console.log("home",item)
+    // this.item=item;
   }
 }

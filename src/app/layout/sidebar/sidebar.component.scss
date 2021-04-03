@@ -39,8 +39,9 @@
     }
     .btn-grad {
       
-      width: 100%;
-      height: 40px;
+      width: 90%;
+      height: 25%;
+      padding:2%;
       margin: 10px auto;
       display: inline-flex;
       vertical-align: middle;
@@ -70,4 +71,13 @@
       border-radius: 10px;
     }
   }
+}
+
+.active {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  background-image: linear-gradient(135deg, #7f6405a3 10%, #8e10108d 100%);
+  border-radius: 10px;
 }

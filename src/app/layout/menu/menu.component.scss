@@ -6,7 +6,15 @@
   backdrop-filter: blur(3.5px);
   -webkit-backdrop-filter: blur(3.5px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1.5fr 1.2fr 0.8fr;
+  grid-template-areas:
+    "content1 content1 content2 "
+    "content1 content1 content2 "
+    "content1 content1 content3 "
+    "content1 content1 content3 ";
+  grid-gap: 10px;
 }
 
 .loading{
@@ -21,4 +29,14 @@
   img{
     width: 100%;
   }
+}
+
+.menu > #content1 {
+  grid-area: content1;
+}
+.menu > #content2 {
+  grid-area: content2;
+}
+.menu > #content3 {
+  grid-area: content3;
 }

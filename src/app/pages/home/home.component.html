@@ -1,11 +1,7 @@
 <section id="page">
-  <nav> <app-sidebar (eventItemMenu)="changeMenu($event)"></app-sidebar> </nav>
-  <main><app-menu [itemMenu]="item"></app-menu></main>
-  <div id="content1">
-    <app-widget></app-widget>
-  </div>
-  <div id="content2">
-    <app-widget></app-widget>
+  <nav><app-sidebar (eventItemMenu)="changeMenu($event)"></app-sidebar></nav>
+  <div class="homePage">
+    <router-outlet></router-outlet>
   </div>
   <footer>
     <app-footer></app-footer>

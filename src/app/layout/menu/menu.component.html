@@ -1,21 +1,14 @@
-<div class="menu">
-  <div *ngIf="loading" class="loading">
-    <img src="../../../assets/images/loadingicon.jpg" alt="">
+<div *ngIf="loading" class="loading">
+  <img src="../../../assets/images/loadingicon.jpg" alt="" />
+</div>
+<div class="menu" *ngIf="!loading">
+  <div id="content1">
+    <app-widget></app-widget>
   </div>
-  <div *ngIf="!loading" class="loading">
-    <p>{{itemMenu}}</p>
+  <div id="content2">
+    <app-widget></app-widget>
   </div>
-
-  <div *ngIf="itemMenu === 'whoIAm'" class="whoIam">
-    <div class="how">nicolasnavarro</div>
-  </div>
-  <div *ngIf="itemMenu === 'home'" class="whoIam">
-    <div class="how">HOME</div>
-  </div>
-  <div *ngIf="itemMenu === 'games'" class="whoIam">
-    <div class="how">GAMES</div>
-  </div>
-  <div *ngIf="itemMenu === 'settings'" class="whoIam">
-    <div class="how">settings</div>
+  <div id="content3">
+    <app-widget></app-widget>
   </div>
 </div>
