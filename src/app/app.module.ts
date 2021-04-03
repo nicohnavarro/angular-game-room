@@ -13,6 +13,9 @@ import { MenuComponent } from './layout/menu/menu.component';
 import { WidgetComponent } from './layout/widget/widget.component';
 import { LanguageSelectorComponent } from './components/common/language-selector/language-selector.component';
 import { GamesComponent } from './components/games/games.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { WhoiamComponent } from './components/whoiam/whoiam.component';
+import { ScoresComponent } from './components/scores/scores.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -29,7 +32,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     MenuComponent,
     WidgetComponent,
     LanguageSelectorComponent,
-    GamesComponent
+    GamesComponent,
+    SettingsComponent,
+    WhoiamComponent,
+    ScoresComponent
   ],
   imports: [
     BrowserModule,

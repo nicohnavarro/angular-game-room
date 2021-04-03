@@ -1,3 +1,6 @@
+import { WhoiamComponent } from './components/whoiam/whoiam.component';
+import { ScoresComponent } from './components/scores/scores.component';
+import { SettingsComponent } from './components/settings/settings.component';
 import { MenuComponent } from './layout/menu/menu.component';
 import { GamesComponent } from './components/games/games.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -11,9 +14,9 @@ const routes: Routes = [
     path: 'home', component: HomeComponent, children: [
       {path: "home", component: MenuComponent},
       {path: "games", component: GamesComponent},
-      {path: "settings", component: GamesComponent},
-      {path: "scores", component: GamesComponent},
-      {path: "whoIAm", component: GamesComponent},]
+      {path: "settings", component: SettingsComponent},
+      {path: "scores", component: ScoresComponent},
+      {path: "whoIAm", component: WhoiamComponent},]
   },
   { path: 'login', component: LoginComponent },
 ];

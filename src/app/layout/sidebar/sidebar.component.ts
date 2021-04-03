@@ -6,7 +6,6 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-  @Output() eventItemMenu: EventEmitter<string> = new EventEmitter();
 
   items = [
     {
@@ -14,12 +13,12 @@ export class SidebarComponent implements OnInit {
       'name': 'home'
     },
     {
-      'icon': 'grade',
-      'name': 'scores'
-    },
-    {
       'icon': 'games',
       'name': 'games'
+    },
+    {
+      'icon': 'grade',
+      'name': 'scores'
     },
     {
       'icon': 'miscellaneous_services',
@@ -33,10 +32,6 @@ export class SidebarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  selectMenuOption(item:string){
-    this.eventItemMenu.emit(item);
   }
 
 }

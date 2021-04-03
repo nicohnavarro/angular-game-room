@@ -29,28 +29,108 @@
     left: 10px;
     font-size: 50px;
     color: white;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
 .listGames {
   width: 100%;
-  height: 100%;
+  height: 70%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 0.2fr 0.2fr;
+  
+  overflow-y: scroll;
   .gameItem {
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background-color: white;
+    border-radius: 12px;
     width: 200px;
-    height: 50px;
+    margin: 20px;
+    height: 250px;
     display: flex;
-    .gameImg {
-      .textGame {
-      }
+    flex-direction: column;
+    .headerGame {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 0;
+      margin-bottom: 0;
       img {
         width: 100%;
-        height: 10px;
+        object-fit: cover;
+        height: 50px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        top: 0;
+      }
+      .textGame {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 20px;
+        color: white;
+        animation: fadeInAnimation ease 3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
       }
     }
     .gameInfo {
-      .gameDescription {
+      img {
+        top: -12px;
+        width: 100%;
+        object-fit: cover;
+        height: 36%;
+        top: 0;
+        margin-top: 0;
+        padding-top: 0;
       }
-      button {
+      .gameDescription {
+        margin: 0;
+        color: black;
+        margin-bottom: 10px;
+      }
+      .btn-grad {
+        background-image: linear-gradient(
+          to right,
+          #ff512f 0%,
+          #f09819 51%,
+          #ff512f 100%
+        );
+      }
+      .btn-grad {
+        margin: 10px auto;
+        font-family: Pixelar;
+        font-size: 20px;
+        padding: 5px 45px;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;
+        box-shadow: 0 0 20px #eee;
+        border-radius: 10px;
+        display: block;
+      }
+
+      .btn-grad:hover {
+        background-position: right center; /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
       }
     }
   }
