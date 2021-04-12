@@ -9,16 +9,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: LoginComponent ,  data: {animation: 'home'}},
   {
-    path: 'home', component: HomeComponent, children: [
+    path: 'home', component: HomeComponent,  data: {animation: 'home'}, children: [
       {path: "home", component: MenuComponent},
       {path: "games", component: GamesComponent},
       {path: "settings", component: SettingsComponent},
       {path: "scores", component: ScoresComponent},
       {path: "whoIAm", component: WhoiamComponent},]
   },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent , data: {animation: 'login'}},
 ];
 
 @NgModule({
