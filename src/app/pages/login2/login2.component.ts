@@ -19,8 +19,11 @@ export class Login2Component implements OnInit {
     console.log(this.username)
     console.log(this.password)
     this.router.navigate(['home'])
+  }
 
-
+  loginAsGuest() {
+    this.username = 'test@test.com'
+    this.password = '123123123'
   }
 
 }

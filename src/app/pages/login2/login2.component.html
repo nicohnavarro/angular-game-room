@@ -5,9 +5,11 @@
 		<div class="form"> 
 			<input type="text" [value]=username placeholder="{{ 'username' | translate }}" >
 			<input type="password"[value]=password placeholder="{{ 'password' | translate }}">
-			<button (click)="login()" id="login-button">{{'login' | translate}}</button>
+			<div class="buttons">
+        <button (click)="login()" class="login">{{'login' | translate}}</button>
+        <button (click)="loginAsGuest()" class="iniciorapido">{{ 'guest' | translate}}</button>
+      </div>
     </div>
-    <button id="iniciorapido">{{ 'guest' | translate}}</button>
 	</div>
 	
 	<ul class="bg-bubbles">

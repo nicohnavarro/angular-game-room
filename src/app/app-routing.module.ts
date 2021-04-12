@@ -14,6 +14,7 @@ const routes: Routes = [
   {
     path: 'home', component: HomeComponent,  data: {animation: 'home'}, children: [
       {path: "", component: MenuComponent},
+      {path: "my", component: MenuComponent},
       {path: "games", component: GamesComponent},
       {path: "settings", component: SettingsComponent},
       {path: "scores", component: ScoresComponent},

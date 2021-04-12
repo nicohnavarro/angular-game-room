@@ -13,6 +13,10 @@ export class SidebarComponent implements OnInit {
       'name': 'home'
     },
     {
+      'icon': 'chat',
+      'name': 'chat'
+    },
+    {
       'icon': 'games',
       'name': 'games'
     },
