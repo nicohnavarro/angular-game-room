@@ -6,5 +6,9 @@
   "settings": "Settings",
   "whoIAm": "Who I am",
   "scores": "Scores",
-  "play":"Play"
+  "play":"Play",
+  "login": "Login",
+  "guest": "As Guest",
+  "username": "Username",
+  "password":"Password"
 }

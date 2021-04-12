@@ -1,3 +1,4 @@
+import { Login2Component } from './pages/login2/login2.component';
 import { WhoiamComponent } from './components/whoiam/whoiam.component';
 import { ScoresComponent } from './components/scores/scores.component';
 import { SettingsComponent } from './components/settings/settings.component';
@@ -12,13 +13,14 @@ const routes: Routes = [
   { path: '', component: LoginComponent ,  data: {animation: 'home'}},
   {
     path: 'home', component: HomeComponent,  data: {animation: 'home'}, children: [
-      {path: "home", component: MenuComponent},
+      {path: "", component: MenuComponent},
       {path: "games", component: GamesComponent},
       {path: "settings", component: SettingsComponent},
       {path: "scores", component: ScoresComponent},
       {path: "whoIAm", component: WhoiamComponent},]
   },
   { path: 'login', component: LoginComponent , data: {animation: 'login'}},
+  { path: 'login2', component: Login2Component , data: {animation: 'login'}},
 ];
 
 @NgModule({

@@ -1,0 +1,25 @@
+<div class="wrapper">
+	<div class="container">
+		<h1>{{ 'welcome' | translate }}</h1>
+		
+		<div class="form"> 
+			<input type="text" [value]=username placeholder="{{ 'username' | translate }}" >
+			<input type="password"[value]=password placeholder="{{ 'password' | translate }}">
+			<button (click)="login()" id="login-button">{{'login' | translate}}</button>
+    </div>
+    <button id="iniciorapido">{{ 'guest' | translate}}</button>
+	</div>
+	
+	<ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>

@@ -6,5 +6,9 @@
   "settings": "Configuracion",
   "whoIAm": "Quien soy ?",
   "scores": "Puntajes",
-  "play":"Jugar"
+  "play":"Jugar",
+  "login": "Ingresar",
+  "guest": "Como Invitado",
+  "username": "Nombre de Usuario",
+  "password":"Clave"
 }

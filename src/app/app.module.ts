@@ -17,6 +17,7 @@ import { GamesComponent } from './components/games/games.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { WhoiamComponent } from './components/whoiam/whoiam.component';
 import { ScoresComponent } from './components/scores/scores.component';
+import { Login2Component } from './pages/login2/login2.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -36,7 +37,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     GamesComponent,
     SettingsComponent,
     WhoiamComponent,
-    ScoresComponent
+    ScoresComponent,
+    Login2Component
   ],
   imports: [
     BrowserModule,

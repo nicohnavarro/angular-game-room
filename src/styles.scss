@@ -6,31 +6,31 @@
 }
 /* You can add global styles to this file, and also import other style files */
 body {
-  background-image: linear-gradient(60deg, #485563 0%, #29323c  100%);
+  background-image: linear-gradient(60deg, #485563 0%, #29323c 100%);
   // background-image: linear-gradient(60deg, #3b444f 0%, #8d96a3  100%);
   margin: 0;
   font-family: Pixelar;
   padding: 0;
   height: 100vh;
   width: 98vw;
-  // overflow: hidden;
+  overflow: hidden;
   /* width */
-::-webkit-scrollbar {
-  width: 10px;
-}
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888; 
-}
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 }
