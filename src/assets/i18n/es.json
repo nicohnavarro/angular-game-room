@@ -14,5 +14,6 @@
   "password":"Clave",
   "logout": "Salir",
   "error":"Opa!",
-  "errorLogin":"No pudimos iniciar tu sesion :(, intenta nuevamente."
+  "errorLogin":"No pudimos iniciar tu sesion :(, intenta nuevamente.",
+  "me":"yo"
 }

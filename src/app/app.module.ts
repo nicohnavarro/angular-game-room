@@ -1,3 +1,4 @@
+import { MessageComponent } from './components/chat/message/message.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -47,7 +48,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     WhoiamComponent,
     ScoresComponent,
     Login2Component,
-    ChatComponent
+    ChatComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,

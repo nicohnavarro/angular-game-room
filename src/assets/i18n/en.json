@@ -14,5 +14,6 @@
   "password":"Password",
   "logout": "Logout",
   "error":"Ups!",
-  "errorLogin":"You can't login :(, Sorry."
+  "errorLogin":"You can't login :(, Sorry.",
+  "me":"me"
 }

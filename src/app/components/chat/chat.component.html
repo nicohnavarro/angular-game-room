@@ -7,4 +7,16 @@
   <div *ngIf="loading" class="loading">
     <img src="../../../assets/images/loadingicon.jpg" alt="" />
   </div>
+
+  <div class="chats" id="chats" *ngIf="!loading" >
+    <div class="" *ngFor="let msg of messages">
+      <app-message [message]=msg></app-message>
+    </div>
+  </div>
+
+
+  <div class="inputMsg" *ngIf="!loading" >
+    <input type="text" (keyup.enter)=sendMsg() [(ngModel)]="newMsg"  placeholder='Text'>
+    <button (click)=sendMsg()><span class="material-icons-round icon">send</span></button>
+  </div>
 </div>
