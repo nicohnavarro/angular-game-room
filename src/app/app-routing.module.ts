@@ -1,3 +1,4 @@
+import { ChatComponent } from './components/chat/chat.component';
 import { Login2Component } from './pages/login2/login2.component';
 import { WhoiamComponent } from './components/whoiam/whoiam.component';
 import { ScoresComponent } from './components/scores/scores.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
       {path: "games", component: GamesComponent},
       {path: "settings", component: SettingsComponent},
       {path: "scores", component: ScoresComponent},
+      {path: "chat", component: ChatComponent},
       {path: "whoIAm", component: WhoiamComponent},]
   },
   { path: 'login', component: LoginComponent , data: {animation: 'login'}},

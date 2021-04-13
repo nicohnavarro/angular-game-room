@@ -1,5 +1,10 @@
+import { UserService } from './../../services/user.service';
+import { TranslateService } from '@ngx-translate/core';
+import { AuthService } from './../../services/auth.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-login2',
@@ -10,15 +15,32 @@ export class Login2Component implements OnInit {
   username: string = '';
   password: string = '';
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, 
+    private authSvc: AuthService, 
+    private toast: ToastrService, 
+    private translate: TranslateService,
+    private userSvc:UserService) { }
 
   ngOnInit(): void {
   }
 
-  login() {
+  async login() {
     console.log(this.username)
     console.log(this.password)
-    this.router.navigate(['home'])
+    try {
+
+      const response = await this.authSvc.login(this.username, this.password);
+      console.log(response);
+      if (response?.uid) {
+        let log = {'uid':response.uid,'date': new Date()}
+        const respLog = await this.userSvc.setLogUser(log)
+        console.log(respLog);
+        this.router.navigate(['home'])
+      }
+    } catch (e) {
+      console.log(e)
+      this.toast.error(this.translate.instant('error'), this.translate.instant('errorLogin'));
+    }
   }
 
   loginAsGuest() {

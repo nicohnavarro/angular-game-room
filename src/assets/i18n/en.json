@@ -12,5 +12,7 @@
   "guest": "As Guest",
   "username": "Username",
   "password":"Password",
-  "logout": "Logout"
+  "logout": "Logout",
+  "error":"Ups!",
+  "errorLogin":"You can't login :(, Sorry."
 }

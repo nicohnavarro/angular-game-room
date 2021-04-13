@@ -12,5 +12,7 @@
   "guest": "Como Invitado",
   "username": "Nombre de Usuario",
   "password":"Clave",
-  "logout": "Salir"
+  "logout": "Salir",
+  "error":"Opa!",
+  "errorLogin":"No pudimos iniciar tu sesion :(, intenta nuevamente."
 }

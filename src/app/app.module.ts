@@ -18,6 +18,14 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { WhoiamComponent } from './components/whoiam/whoiam.component';
 import { ScoresComponent } from './components/scores/scores.component';
 import { Login2Component } from './pages/login2/login2.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { environment } from 'src/environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { ToastrModule } from 'ngx-toastr';
+import { ChatComponent } from './components/chat/chat.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -38,10 +46,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     SettingsComponent,
     WhoiamComponent,
     ScoresComponent,
-    Login2Component
+    Login2Component,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
+    ToastrModule.forRoot(),
     BrowserAnimationsModule,
     HttpClientModule,
     TranslateModule.forRoot({
@@ -51,6 +61,13 @@ export function HttpLoaderFactory(http: HttpClient) {
           deps: [HttpClient]
       }
   }),
+  FormsModule,
+  ReactiveFormsModule,
+  AngularFireModule.initializeApp(environment.firebaseConfig),
+  AngularFireAuthModule,
+  AngularFirestoreModule,
+  AngularFireAuthModule,
+  AngularFireStorageModule,
     AppRoutingModule
   ],
   providers: [
