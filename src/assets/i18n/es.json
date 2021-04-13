@@ -11,5 +11,6 @@
   "login": "Ingresar",
   "guest": "Como Invitado",
   "username": "Nombre de Usuario",
-  "password":"Clave"
+  "password":"Clave",
+  "logout": "Salir"
 }

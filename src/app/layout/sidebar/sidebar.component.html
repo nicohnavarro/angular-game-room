@@ -14,6 +14,9 @@
         <a class="side">{{ item.name | translate }}</a>
       </li>
     </ul>
+    <div class="logout"(click)="logout()">
+      <span class="material-icons-round icon">logout</span><span class="textside">{{'logout' | translate}}</span>
+    </div>
   </div>
   <app-language-selector></app-language-selector>
 </div>

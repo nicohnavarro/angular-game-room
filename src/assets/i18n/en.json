@@ -11,5 +11,6 @@
   "login": "Login",
   "guest": "As Guest",
   "username": "Username",
-  "password":"Password"
+  "password":"Password",
+  "logout": "Logout"
 }

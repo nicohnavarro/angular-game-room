@@ -73,6 +73,26 @@
   }
 }
 
+.logout{
+  background:  linear-gradient(135deg, #fcd031e5 10%, #f55555 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+  display: inline-flex;
+  vertical-align: middle;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  .icon{
+    margin: 10px 20px;
+}
+}
+.logout:hover{
+  .icon{
+    margin: 10px 30px;
+}
+  cursor: pointer;
+}
+
 .active {
   background-position: right center; /* change the direction of the change here */
   color: #fff;

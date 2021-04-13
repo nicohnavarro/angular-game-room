@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
@@ -33,9 +34,13 @@ export class SidebarComponent implements OnInit {
       'name': 'whoIAm'
     }
   ]
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  logout(){
+    this.router.navigateByUrl('login2');
   }
 
 }
