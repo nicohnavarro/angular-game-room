@@ -14,6 +14,7 @@ export class AuthService {
 
   async login(email: string, password: string) {
     try {
+      console.log(email,password)
       const result = await this.afAuth.signInWithEmailAndPassword(email, password);
       return result.user;
     }

@@ -1,10 +1,9 @@
-import { MessageComponent } from './components/chat/message/message.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {HttpClientModule, HttpClient, HTTP_INTERCEPTORS} from '@angular/common/http';
-import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
@@ -26,7 +25,6 @@ import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { ToastrModule } from 'ngx-toastr';
-import { ChatComponent } from './components/chat/chat.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -47,9 +45,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     SettingsComponent,
     WhoiamComponent,
     ScoresComponent,
-    Login2Component,
-    ChatComponent,
-    MessageComponent
+    Login2Component
   ],
   imports: [
     BrowserModule,
@@ -58,27 +54,33 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
-          provide: TranslateLoader,
-          useFactory: HttpLoaderFactory,
-          deps: [HttpClient]
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
       }
-  }),
-  FormsModule,
-  ReactiveFormsModule,
-  AngularFireModule.initializeApp(environment.firebaseConfig),
-  AngularFireAuthModule,
-  AngularFirestoreModule,
-  AngularFireAuthModule,
-  AngularFireStorageModule,
+    }),
+    FormsModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
     AppRoutingModule
   ],
+  exports: [
+    TranslateModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [
-  //   {
-  //   provide: HTTP_INTERCEPTORS,
-  //   useClass: LanguageInterceptor,
-  //   multi:true
-  // }
-],
+    //   {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: LanguageInterceptor,
+    //   multi:true
+    // }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

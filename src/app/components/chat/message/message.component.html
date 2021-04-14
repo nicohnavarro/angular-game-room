@@ -1,22 +1,21 @@
-<div class="containerMsg" *ngIf="currentUser.email !== message.user.username">
+<div class="containerMsg" *ngIf="currentUser?.email !== message.user.username">
   <div class="avatar">
     <img [src]=message.img alt="">
   </div>
   <div class="info">
     <div class="title">
-      <h4 *ngIf="currentUser.email !== message.user.username">{{message.user.username}}</h4>
-      <h4 *ngIf="currentUser.email === message.user.username">{{'me' | translate}}</h4>
+      <h4>{{message.user.username}}</h4>
     </div>
     <div class="text">
       <span>{{message.text}}</span>
     </div>
     <div class="date">
-      <span>{{message.date}}</span>
+      <span>{{message.date | date:'short'}}</span>
     </div>
   </div>
 </div>
 
-<div class="myMsg" *ngIf="currentUser.email === message.user.username">
+<div class="myMsg" *ngIf="currentUser?.email === message.user.username">
   <div class="info">
     <div class="title">
       <h4>{{'me' | translate}}</h4>
@@ -25,7 +24,7 @@
       <span>{{message.text}}</span>
     </div>
     <div class="date">
-      <span>{{message.date}}</span>
+      <span>{{message.date | date:'short'}}</span>
     </div>
   </div>
 </div>

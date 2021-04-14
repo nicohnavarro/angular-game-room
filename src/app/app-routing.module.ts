@@ -19,7 +19,8 @@ const routes: Routes = [
       {path: "games", component: GamesComponent},
       {path: "settings", component: SettingsComponent},
       {path: "scores", component: ScoresComponent},
-      {path: "chat", component: ChatComponent},
+      // {path: "chat", component: ChatComponent},
+      {path: "chat", loadChildren: () => import('./components/chat/chat.module').then(m => m.ChatModule)},
       {path: "whoIAm", component: WhoiamComponent},]
   },
   { path: 'login', component: LoginComponent , data: {animation: 'login'}},

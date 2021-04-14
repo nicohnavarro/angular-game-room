@@ -1,3 +1,4 @@
+import { ChatService } from './../../services/chat.service';
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -11,29 +12,24 @@ export class ChatComponent implements OnInit {
   messages: any[] = [];
   newMsg: string = '';
   user: any = null;
-  constructor(private authSvc: AuthService) {
-    this.user = this.authSvc.getCurrentUser()
+  constructor(private authSvc: AuthService, private chatSvc:ChatService) {
+    this.authSvc.getCurrentUser().then((data)=>{
+      this.user = data;
+      this.getMessages()
+      this.scrollBottom()
+    })
     console.log(this.user);
-    let message = {
-      'img': "../../../assets/images/avatar.png",
-      'user': { 'username': "Nico" },
-      'date': new Date(),
-      'text': "Esto es un amensaje de prubea"
-    }
 
-    
-    this.messages.push(message)
 
     setTimeout(() => {
       this.loading = false;
-    }, 5000);
+    }, 3000);
   }
 
   ngOnInit(): void {
   }
 
-  sendMsg() {
-    console.log(this.newMsg)
+  async sendMsg() {
     let newMessage = {
       'img': this.user.photoURL ? this.user.photoURL : "../../../assets/images/avatar.png",
       'user': { 'username': this.user.email },
@@ -41,18 +37,30 @@ export class ChatComponent implements OnInit {
       'text': this.newMsg
     }
     this.newMsg = ''
-    this.messages.push(newMessage)
+    const resp = await this.chatSvc.addChat(newMessage);
+    console.log(resp);
+    this.getMessages();
     this.scrollBottom()
-
   }
 
+  getMessages(){
+    this.chatSvc.getChats().subscribe((data)=>{
+      console.log(data);
+      data? this.messages = data : null;
+      this.messages = data.sort((a: any, b: any) => {
+        return a.date - b.date;
+      }).map(msg =>{ return {...msg, date: msg.date.toDate()}});
+    },(error)=>{
+      console.log(error);
+    })
+  }
   scrollBottom(){
     setTimeout(() => {
       const objDiv = document.getElementById("chats");
       if(objDiv){
         objDiv.scrollTop = objDiv.scrollHeight;
       }
-    }, 500);
+    }, 1000);
   }
 
 }

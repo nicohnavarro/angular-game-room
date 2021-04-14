@@ -8,10 +8,12 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class MessageComponent implements OnInit {
   @Input() message: any
-  currentUser:any;
-  constructor(private authSvc:AuthService) { 
-    this.currentUser = this.authSvc.getCurrentUser()
-  } 
+  currentUser: any;
+  constructor(private authSvc: AuthService) {
+    this.authSvc.getCurrentUser().then((data) => {
+      this.currentUser = data
+    })
+  }
 
   ngOnInit(): void {
   }

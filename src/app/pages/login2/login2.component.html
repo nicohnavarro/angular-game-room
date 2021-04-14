@@ -3,8 +3,8 @@
 		<h1>{{ 'welcome' | translate }}</h1>
 		
 		<div class="form"> 
-			<input type="text" [value]=username placeholder="{{ 'username' | translate }}" >
-			<input type="password"[value]=password placeholder="{{ 'password' | translate }}">
+			<input type="text" [value]=username  [(ngModel)]="username" placeholder="{{ 'username' | translate }}" >
+			<input type="password"[value]=password [(ngModel)]="password" placeholder="{{ 'password' | translate }}">
 			<div class="buttons">
         <button (click)="login()" class="login">{{'login' | translate}}</button>
         <button (click)="loginAsGuest()" class="iniciorapido">{{ 'guest' | translate}}</button>
