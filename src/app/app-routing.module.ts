@@ -11,7 +11,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent ,  data: {animation: 'home'}},
+  { path: '', component: Login2Component ,  data: {animation: 'home'}},
   {
     path: 'home', component: HomeComponent,  data: {animation: 'home'}, children: [
       {path: "", component: MenuComponent},
