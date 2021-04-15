@@ -51,7 +51,7 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 0.2fr 0.2fr;
   
-  overflow-y: scroll;
+  overflow-y: auto;
   .gameItem {
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(3.5px);
@@ -131,6 +131,7 @@
         background-position: right center; /* change the direction of the change here */
         color: #fff;
         text-decoration: none;
+        cursor: pointer;
       }
     }
   }

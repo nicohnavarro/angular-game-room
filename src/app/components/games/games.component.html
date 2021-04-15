@@ -8,15 +8,15 @@
     <div class="gameItem"*ngFor="let game of games">
       <div class="headerGame">
         <img src="../../../assets/images/header.jpg" alt="" />
-        <div class="textGame">Name</div>
+        <div class="textGame">{{game.name | translate }}</div>
       </div>
       <div class="gameInfo">
-        <img src="../../../assets/images/rockpapperscissor.jpg" alt="">
+        <img [src]="game.image" alt="">
         <h5 class="gameDescription">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo maiores
           similique dignissimos rem atque?
         </h5>
-        <button class="btn-grad">{{ "play" | translate }}</button>
+        <button class="btn-grad" (click)="goToGame(game.name)">{{ 'play' | translate }}</button>
       </div>
     </div>
   </div>

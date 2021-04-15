@@ -15,5 +15,7 @@
   "logout": "Salir",
   "error":"Opa!",
   "errorLogin":"No pudimos iniciar tu sesion :(, intenta nuevamente.",
-  "me":"yo"
+  "me":"yo",
+  "tateti":"Ta Te Ti",
+  "rockscissorpapper": "Piedra, Papel, Tijera"
 }

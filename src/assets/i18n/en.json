@@ -15,5 +15,8 @@
   "logout": "Logout",
   "error":"Ups!",
   "errorLogin":"You can't login :(, Sorry.",
-  "me":"me"
+  "me":"me",
+  "tateti":"Tic Tac Toe",
+  "rockscissorpapper": "Rock, Scissor, Papper"
+
 }

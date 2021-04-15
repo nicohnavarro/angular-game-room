@@ -16,10 +16,9 @@ const routes: Routes = [
     path: 'home', component: HomeComponent,  data: {animation: 'home'}, children: [
       {path: "", component: MenuComponent},
       {path: "my", component: MenuComponent},
-      {path: "games", component: GamesComponent},
+      {path: "games",  loadChildren: () => import('./components/games/games.module').then(m => m.GamesModule)},
       {path: "settings", component: SettingsComponent},
       {path: "scores", component: ScoresComponent},
-      // {path: "chat", component: ChatComponent},
       {path: "chat", loadChildren: () => import('./components/chat/chat.module').then(m => m.ChatModule)},
       {path: "whoIAm", component: WhoiamComponent},]
   },

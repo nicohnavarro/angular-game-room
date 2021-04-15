@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,18 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GamesComponent implements OnInit {
 games:any[];
-  constructor() {
+  constructor(private router:Router) {
     this.games = [
-      {id:1,name: 'Game1',description:"description1"},
-      {id:2,name: 'Game2',description:"description2"},
-      {id:3,name: 'Game3',description:"description3"},
-      {id:1,name: 'Game1',description:"description1"},
-      {id:2,name: 'Game2',description:"description2"},
-      {id:3,name: 'Game3',description:"description3"},
+      {id:1,name: 'tateti',description:"description1", image: "../../../assets/images/rockpapperscissor.jpg"},
+      {id:2,name: 'rockscissorpapper',description:"description2", image: "../../../assets/images/tateti.jpg"},
     ]
    }
 
   ngOnInit(): void {
+  }
+  goToGame(name:string){
+    this.router.navigate(['home/games/'+name])
   }
 
 }
