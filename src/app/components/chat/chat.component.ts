@@ -12,13 +12,12 @@ export class ChatComponent implements OnInit {
   messages: any[] = [];
   newMsg: string = '';
   user: any = null;
-  constructor(private authSvc: AuthService, private chatSvc:ChatService) {
-    this.authSvc.getCurrentUser().then((data)=>{
+  constructor(private authSvc: AuthService, private chatSvc: ChatService) {
+    this.authSvc.getCurrentUser().then((data) => {
       this.user = data;
-      this.getMessages()
-      this.scrollBottom()
+      //this.getMessages()
+      this.getMessagesBest();
     })
-    console.log(this.user);
 
 
     setTimeout(() => {
@@ -27,6 +26,7 @@ export class ChatComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getMessagesBest()
   }
 
   async sendMsg() {
@@ -38,26 +38,38 @@ export class ChatComponent implements OnInit {
     }
     this.newMsg = ''
     const resp = await this.chatSvc.addChat(newMessage);
-    console.log(resp);
-    this.getMessages();
-    this.scrollBottom()
   }
 
-  getMessages(){
-    this.chatSvc.getChats().subscribe((data)=>{
+  getMessages() {
+    this.chatSvc.getChats().subscribe((data) => {
       console.log(data);
-      data? this.messages = data : null;
+      data ? this.messages = data : null;
       this.messages = data.sort((a: any, b: any) => {
         return a.date - b.date;
-      }).map(msg =>{ return {...msg, date: msg.date.toDate()}});
-    },(error)=>{
+      }).map(msg => { return { ...msg, date: msg.date.toDate() } });
+      this.scrollBottom()
+    }, (error) => {
       console.log(error);
     })
   }
-  scrollBottom(){
+
+
+  getMessagesBest() {
+    this.chatSvc.getChatsMejorado().subscribe(data => {
+      data ? this.messages = data : null;
+      this.messages = data.sort((a: any, b: any) => {
+        return a.date - b.date;
+      }).map(msg => { return { ...msg, date: msg.date.toDate() } });
+      this.scrollBottom()
+    }, (error) => {
+      console.log(error);
+    })
+  }
+
+  scrollBottom() {
     setTimeout(() => {
       const objDiv = document.getElementById("chats");
-      if(objDiv){
+      if (objDiv) {
         objDiv.scrollTop = objDiv.scrollHeight;
       }
     }, 1000);

@@ -1,19 +1,63 @@
-<!-- <div class="container">
-  <div class="backBtn">
-    
-    <button (click)="goBack()">Volver</button>
-
-  </div>
-</div> -->
-
 <div class="tatetiPage">
   <div class="header">
     <img src="../../../assets/images/header2.jpg" alt="" />
     <div class="backBtn">
-      <span class="material-icons-outlined" (click)="goBack()">arrow_back_ios_new</span>
+      <span class="material-icons-outlined" (click)="goBack()"
+        >arrow_back_ios_new</span
+      >
     </div>
-    <div class="texto">{{ 'tateti' | translate }}</div>
+    <div class="texto">{{ "tateti" | translate }}</div>
   </div>
 
+  <div class="container animated fadeIn faster">
+    <div class="row">
+      <div class="col-md-6 mx-auto mt-5">
+        <div class="card">
+          <div class="card-body">
+            <div class="info animated fadeInRight">
+              <div *ngIf="!gameOver" class="turnos">
+                <h1 *ngIf="currentPlayer.name == 'Jugador'">Es tu turno!</h1>
+                <h1 *ngIf="currentPlayer.name == 'Enemigo'">
+                  Es el turno de tu oponente.
+                </h1>
+              </div>
+              <div class="comunication">
+                <h1 *ngIf="gameOver && lastWinner == PLAYER_HUMAN">Ganaste!</h1>
+                <h1 *ngIf="gameOver && lastWinner == PLAYER_COMPUTER">
+                  Perdiste!
+                </h1>
+                <h1 *ngIf="gameOver && lastWinner == DRAW">Es un empate!</h1>
+                <h1 *ngIf="gameOver">
+                <span
+                class="material-icons-outlined"
+                (click)="newGame()"
+                >restart_alt</span></h1>
+              </div>
+              <div id="score-board" class="score-board">
+                <div id="user-label" class="badge">Jugador</div>
+                <div id="computer-label" class="badge pc">Oponente</div>
+                <span id="user-scored">{{ scoreHuman }}</span> :
+                <span id="computer-scored">{{ scoreComputer }}</span>
+              </div>
+              <div></div>
+              <div id="board" [class.locked]="boardLocked || gameOver">
+                <div
+                  *ngFor="let square of board"
+                  class="square animated fadeIn"
+                  [class.checked]="square.value != ''"
+                  [class.winner]="square.winner && lastWinner == PLAYER_HUMAN"
+                  [class.looser]="
+                    square.winner && lastWinner == PLAYER_COMPUTER
+                  "
+                  (click)="square_click(this.square)"
+                >
+                  {{ square.value }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
