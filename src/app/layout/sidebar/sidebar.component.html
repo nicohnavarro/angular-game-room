@@ -4,19 +4,22 @@
   </div>
   <div class="navBar">
     <h2>{{ "welcome" | translate }}</h2>
-    <ul class="menu" *ngFor="let item of items">
-      <li
-        class="btn-grad"
-        routerLinkActive="active"
-        routerLink="/home/{{ item.name === 'home' ? 'my' : item.name }}"
-      >
-        <span class="material-icons-round icon">{{ item.icon }}</span>
-        <a class="side">{{ item.name | translate }}</a>
-      </li>
-    </ul>
-    <div class="logout"(click)="logout()">
-      <span class="material-icons-round icon">logout</span><span class="textside">{{'logout' | translate}}</span>
+    <div class="mobile">
+      <ul class="menu" *ngFor="let item of items">
+        <li
+          class="btn-grad"
+          routerLinkActive="active"
+          routerLink="/home/{{ item.name === 'home' ? 'my' : item.name }}"
+        >
+          <span class="material-icons-round icon">{{ item.icon }}</span>
+          <a class="side">{{ item.name | translate }}</a>
+        </li>
+      </ul>
+      <div class="logout"(click)="logout()">
+        <span class="material-icons-round icon">logout</span><span class="textside">{{'logout' | translate}}</span>
+      </div>
     </div>
+
   </div>
   <app-language-selector></app-language-selector>
 </div>

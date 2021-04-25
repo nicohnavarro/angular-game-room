@@ -24,3 +24,16 @@
 #page > footer {
   grid-area: foot;
 }
+
+
+@media only screen and (max-width: 550px){
+  #page{
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 1fr;
+    grid-template-areas:
+      "nav"
+      "main";
+    grid-gap: 10px;
+    overflow-x: hidden;
+  }
+}

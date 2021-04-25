@@ -101,3 +101,25 @@
   background-image: linear-gradient(135deg, #7f6405a3 10%, #8e10108d 100%);
   border-radius: 10px;
 }
+
+
+@media only screen and (max-width: 550px){
+  .sidebar{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    .navBar{
+      display: flex;
+      flex-direction: column;
+      max-height: 100%;
+      .mobile{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .side{
+          display: none;
+        }
+      }
+    }
+  }
+}
